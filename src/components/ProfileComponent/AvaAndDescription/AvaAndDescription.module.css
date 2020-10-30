@@ -1,0 +1,8 @@
+.AVA{
+    width: 200px;
+    height: auto;
+  }
+.AvaAndDescription{
+  display: flex;
+  flex-direction: row;
+}

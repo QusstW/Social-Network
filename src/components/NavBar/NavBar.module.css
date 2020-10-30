@@ -1,0 +1,8 @@
+.NavBar{
+    grid-area: n;
+    background-color: rgb(68, 148, 148);
+  }
+
+.item{
+    color: aliceblue;
+}
