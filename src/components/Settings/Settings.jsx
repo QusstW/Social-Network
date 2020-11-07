@@ -2,7 +2,9 @@ import React from "react";
 import s from "./Settings.module.css"
 
 
-const Settings = (props) =>{
+
+
+const Settings = () =>{
 
     return(
         <div>Settings</div>

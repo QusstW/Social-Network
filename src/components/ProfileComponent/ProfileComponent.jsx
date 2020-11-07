@@ -4,12 +4,16 @@ import MyPosts from "./MyPosts/MyPosts";
 import s from "./ProfileComponent.module.css";
 import TopBackground from "./TopBackground/TopBackground";
 
-const ProfileComponent = () => {
+
+
+
+
+const ProfileComponent = (props) => {
   return (
     <div>
       <TopBackground />
       <AvaAndDescription />
-      <MyPosts />
+      <MyPosts Data={props.PostsData} />
     </div>
   )
 }

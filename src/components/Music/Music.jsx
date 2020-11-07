@@ -1,11 +1,11 @@
 import React from "react";
-import s from "./Music.module.css"
+import clas from "./Music.module.css"
 
 
 const Music = (props) =>{
 
     return(
-        <div>Music</div>
+        <div className={clas.m}>Music</div>
     )
 }
 

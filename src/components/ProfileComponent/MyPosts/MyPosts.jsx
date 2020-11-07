@@ -2,17 +2,19 @@ import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+
+const MyPosts = (props) => {
+
+  let AnyPost = props.Data.map(post => <Post name={post.name} message={post.message} />)
   return (
+    <div>
+      My posts
       <div>
-        My posts
-        <div>
-         <textarea>azaza</textarea>
-         <button>Add post</button>
-        <div/>
-        <Post name ="Daniil"/>
-        <Post name ="Anton"/>
-        <Post name ="Ilya"/>
+        <textarea>azaza</textarea>
+        <button>Add post</button>
+
+        <div />
+        {AnyPost}
       </div>
     </div>
   )

@@ -3,10 +3,11 @@ import s from "./Post.module.css";
 
 const Post = (props) => {
   return (
-        <div className={s.item}>
-          {props.name}
-        </div>
-        
+    <div className={s.item}>
+      {props.name}
+      {props.message}
+    </div>
+
   )
 }
 
