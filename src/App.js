@@ -16,11 +16,11 @@ function App(props) {
       <div className="app-wrapper">
         <Header />
         <NavBar />
-        <div class="app-wrapper-content">
-          <Route path="/Profile" render={()=> <ProfileComponent PostsData ={props.PostsData}/>} />
-          <Route path ="/Dialogs" render={()=><Dialogs dialogaData={props.dialogaData} messageData={props.messageData} />} />
+        <div className="app-wrapper-content">
+          <Route path="/Profile" render={()=> <ProfileComponent dataProfile={props.state.profilePage} addPost={props.addPost}/>} />
+          <Route path ="/Dialogs" render={()=><Dialogs dataDialogs={props.state.dialogsPage} />} />
           <Route path ="/News" render={()=><News />} />
-          <Route path ="/Music" render={()=><Music />} />
+          <Route path ="/Music" render={()=><Music dataMusic={props.state.musicPage}/>} />
           <Route path ="/Settings" render={()=><Settings />} />
         </div>
       </div>

@@ -13,7 +13,7 @@ const ProfileComponent = (props) => {
     <div>
       <TopBackground />
       <AvaAndDescription />
-      <MyPosts Data={props.PostsData} />
+      <MyPosts Data={props.dataProfile.PostsData} addPost={props.addPost} />
     </div>
   )
 }
