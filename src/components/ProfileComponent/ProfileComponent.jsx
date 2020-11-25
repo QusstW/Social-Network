@@ -1,6 +1,6 @@
 import React from "react";
 import AvaAndDescription from "./AvaAndDescription/AvaAndDescription";
-import MyPosts from "./MyPosts/MyPosts";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import s from "./ProfileComponent.module.css";
 import TopBackground from "./TopBackground/TopBackground";
 
@@ -13,7 +13,7 @@ const ProfileComponent = (props) => {
     <div>
       <TopBackground />
       <AvaAndDescription />
-      <MyPosts DataPosts={props.dataProfile.PostsData} DataNewPostText={props.dataProfile.NewPostText}  dispatch={props.dispatch} />
+      <MyPostsContainer store = {props.store}/>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Dialogs from "./components/Dialogs/Dialogs";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
@@ -8,6 +7,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 function App(props) {
@@ -17,10 +17,10 @@ function App(props) {
         <Header />
         <NavBar />
         <div className="app-wrapper-content">
-          <Route path="/Profile" render={()=> <ProfileComponent dataProfile={props.state.profilePage}  dispatch={props.dispatch}/>} />
-          <Route path ="/Dialogs" render={()=><Dialogs dataDialogs={props.state.dialogsPage} dispatch={props.dispatch} />} />
+          <Route path="/Profile" render={()=> <ProfileComponent />} />
+          <Route path ="/Dialogs" render={()=><DialogsContainer />} />
           <Route path ="/News" render={()=><News />} />
-          <Route path ="/Music" render={()=><Music dataMusic={props.state.musicPage}/>} />
+          <Route path ="/Music" render={()=><Music />} />
           <Route path ="/Settings" render={()=><Settings />} />
           
         </div>

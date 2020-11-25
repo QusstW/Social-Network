@@ -1,5 +1,5 @@
 import React from "react";
-import { addMessageActionCreator, updateNewTextMessageActionCreator } from "../../redux/state";
+import { addMessageActionCreator, updateNewTextMessageActionCreator } from "../../redux/DialogReducer";
 import DialogItem from "./DialogItem/DialogItem";
 import s from "./Dialogs.module.css"
 import Message from "./Message/Message";
@@ -7,25 +7,24 @@ import Message from "./Message/Message";
 
 
 const Dialogs = (props) => {
-
     let newMessageElement = React.createRef();
 
-    let addMessage = () => {
-        props.dispatch( addMessageActionCreator() )
+    let onAddMessage = () => {
+        props.addMessage()
     }
 
     let onMessageChenge = () => {
         let messageText = newMessageElement.current.value
-        props.dispatch( updateNewTextMessageActionCreator(messageText) )
+        props.onMessageChenge(messageText)
     }
 
-    let dialog = props.dataDialogs.dialogaData.map((d) => {
+    let dialog = props.dialogData.map((d) => {
+ 
         return (
             <DialogItem name={d.name} id={d.id} />
         )
     })
-    
-    let message = props.dataDialogs.messageData.map((m) => {
+    let message = props.messageData.map((m) => {
         return (
             <Message message={m.message} />
         )
@@ -38,8 +37,8 @@ const Dialogs = (props) => {
 
             <div>
                 {message}
-                <textarea onChange={onMessageChenge} ref={newMessageElement} value={props.dataDialogs.newMessageText} > </textarea>
-                <button onClick={addMessage}>Push</button>
+                <textarea onChange={onMessageChenge} ref={newMessageElement} value={props.newMessageText} > </textarea>
+                <button onClick={onAddMessage}>Push</button>
 
             </div>
 

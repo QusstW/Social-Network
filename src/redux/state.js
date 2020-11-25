@@ -1,16 +1,6 @@
-
-export const addPostActionCreator = () => {
-  return { type: "ADD-POST" }
-}
-export const updateNewPostMessageActionCreator = (text) => {
-  return { type: "UPDATE-NEW-POST-MESSAGE", text: text }
-}
-export const updateNewTextMessageActionCreator = (messageText)=>{
-  return {type:"UPDATE-NEW-TEXT-MESSAGE", text: messageText}
-}
-export const addMessageActionCreator = () =>{
-  return {type:"ADD-MESSAGE"}
-}
+import DialogReducer from "./DialogReducer"
+import MusicReduser from "./MusicReducer"
+import ProfileReducer from "./ProfileReducer"
 
 let store = {
 
@@ -65,53 +55,20 @@ let store = {
     this._rerender = observer
 
   },
-  //  addPost  () {
-  //   let postData = {
-  //     name: "Try",
-  //     message: this._state.profilePage.NewPostText
-  //   };
-  //   this._state.profilePage.PostsData.push(postData)
-  //   this._state.profilePage.NewPostText = ""
-  //   this._rerender(this._state)
-  // },
-  // updateNewPostMessage  (text)  {
-  //   this._state.profilePage.NewPostText = text;
-  //   this._rerender(this._state)
-  // },
-
   dispatch(actions) {
-    if (actions.type === "ADD-POST") {
-      let postData = {
-        name: "Try",
-        message: this._state.profilePage.NewPostText
-      };
-      this._state.profilePage.PostsData.push(postData)
-      this._state.profilePage.NewPostText = ""
-      this._rerender(this._state)
-    }
-    else if (actions.type === "UPDATE-NEW-POST-MESSAGE") {
-      this._state.profilePage.NewPostText = actions.text;
-      this._rerender()
-    }
-    else if (actions.type === "ADD-MESSAGE") {
 
-        let messageData = {
-          message: this._state.dialogsPage.newMessageText
-        }
-
-        this._state.dialogsPage.messageData.push(messageData)
-        this._state.dialogsPage.newMessageText = ""
-        this._rerender(this._state)
-    }
-    else if (actions.type === "UPDATE-NEW-TEXT-MESSAGE") {
-      this._state.dialogsPage.newMessageText = actions.text
-      this._rerender()
+    this._state.profilePage = ProfileReducer(this._state.profilePage, actions)
+    this._state.dialogsPage = DialogReducer(this._state.dialogsPage, actions)
+    this._state.musicPage = MusicReduser(this._state.musicPage, actions)
 
 
-    }
+    this._rerender(this._state)
 
+
+   
   }
 }
+
 
 
 
