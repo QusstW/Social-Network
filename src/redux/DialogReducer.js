@@ -18,33 +18,37 @@ let initializationStore = {
   newMessageText: "Введите сообщение...."
 }
 
-const DialogReducer = (state = initializationStore, actions) =>{
+const DialogReducer = (state = initializationStore, actions) => {
 
-    switch (actions.type) {
-        case ADD_MESSAGE:
-            let messageData = {
-                message: state.newMessageText
-              }
-              state.messageData.push(messageData)
-              state.newMessageText = ""
-            return state
+  switch (actions.type) {
+    case ADD_MESSAGE:
+      let messageData = {
+        message: state.newMessageText
+      }
+      return {
+        ...state,
+        messageData : [...state.messageData, messageData],
+        newMessageText: ""
+       }
     
-        case UPDATE_NEW_TEXT_MESSAGE:
-            state.newMessageText = actions.text
-            return state
+    case UPDATE_NEW_TEXT_MESSAGE:
+      return {
+        ...state,
+        newMessageText: actions.text,
+      }
 
-        default:
-            return state     
-            
-    }
+    default:
+      return state
+
+  }
 
 }
 
-export const updateNewTextMessageActionCreator = (messageText)=>{
-    return {type:"UPDATE-NEW-TEXT-MESSAGE", text: messageText}
-  }
-  export const addMessageActionCreator = () =>{
-    return {type:"ADD-MESSAGE"}
-  }
+export const updateNewTextMessageActionCreator = (messageText) => {
+  return { type: "UPDATE-NEW-TEXT-MESSAGE", text: messageText }
+}
+export const addMessageActionCreator = () => {
+  return { type: "ADD-MESSAGE" }
+}
 
 export default DialogReducer

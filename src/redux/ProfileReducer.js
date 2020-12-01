@@ -3,33 +3,41 @@ const UPDATE_NEW_POST_MESSAGE = "UPDATE-NEW-POST-MESSAGE"
 
 let initializationStore = {
   PostsData: [
-    { name: "Daniil", message: "Привет, как дела?" }, //post
-    { name: "Anton", message: "Оу shit" },            //post
-    { name: "Ilya", message: "Здесь был Илья" }       //post
+    {id : 1, name: "Daniil", message: "Привет, как дела?" }, //post
+    {id : 2, name: "Anton", message: "Оу shit" },            //post
+    {id : 3, name: "Ilya", message: "Здесь был Илья" }       //post
   ],
   NewPostText: "Введите сообщение..."
 }
 
 const ProfileReducer = (state = initializationStore, actions) =>{
-
     switch (actions.type) {
         case ADD_POST:
             let postData = {
                 name: "Try",
                 message: state.NewPostText
               };
-              state.PostsData.push(postData)
-              state.NewPostText = ""
-            return state
-        
+
+            return {
+              ...state,
+              PostsData : [...state.PostsData, postData],
+              NewPostText : ""
+            }
+            
+
         case UPDATE_NEW_POST_MESSAGE:
-            state.NewPostText = actions.text;
-            return state
+            return {
+              ...state,
+              NewPostText : actions.text
+            }
     
         default:
             return state
     }
 }
+
+
+
 
 export const addPostActionCreator = () => {
     return { type: "ADD-POST" }

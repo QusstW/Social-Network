@@ -6,11 +6,11 @@ import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
 import { BrowserRouter, Route } from "react-router-dom";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import Music from "./components/Music/Music";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import MusicContainer from "./components/Music/MusicContainer";
 
 
-function App(props) {
+function App() {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -18,9 +18,9 @@ function App(props) {
         <NavBar />
         <div className="app-wrapper-content">
           <Route path="/Profile" render={()=> <ProfileComponent />} />
-          <Route path ="/Dialogs" render={()=><DialogsContainer />} />
+          <Route path ="/Dialogs" render={()=><DialogsContainer />} /> 
           <Route path ="/News" render={()=><News />} />
-          <Route path ="/Music" render={()=><Music />} />
+          <Route path ="/Music" render={()=><MusicContainer />} />
           <Route path ="/Settings" render={()=><Settings />} />
           
         </div>

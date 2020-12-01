@@ -8,12 +8,12 @@ import TopBackground from "./TopBackground/TopBackground";
 
 
 
-const ProfileComponent = (props) => {
+const ProfileComponent = () => {
   return (
     <div>
       <TopBackground />
       <AvaAndDescription />
-      <MyPostsContainer store = {props.store}/>
+      <MyPostsContainer />
     </div>
   )
 }
