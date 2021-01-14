@@ -8,9 +8,9 @@ const ProfileInfo=(props)=>{
   return(
     <div className={s.AvaAndDescription}>
     <div className={s.AVA}>
-      <img src="https://i.pinimg.com/originals/33/b8/69/33b869f90619e81763dbf1fccc896d8d.jpg" />
+      <img src="https://bookflow.ru/wp-content/uploads/2016/04/programmist.jpg" />
     </div>
-    <div>Descriptoin</div>
+    <div className={s.Description}>Descriptoin</div>
   </div>
   )
 }

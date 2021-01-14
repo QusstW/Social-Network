@@ -1,0 +1,9 @@
+.ava{
+    width: 200px;
+    height: 200px;
+}
+.currentPage{
+    font-weight: bold;
+    font-size: 23px;
+    cursor: pointer;
+}

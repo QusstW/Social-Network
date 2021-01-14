@@ -1,8 +1,20 @@
 .AVA{
-    width: 200px;
+    width: 240px;
     height: auto;
+    margin: 20px;
+    background-color: rgb(221, 217, 217);
+    padding: 15px;
+    border-radius: 20px;
   }
 .AvaAndDescription{
   display: flex;
   flex-direction: row;
+}
+.Description{
+  width: -webkit-fill-available;
+  height: auto;
+  margin: 20px 20px 20px 120px;
+  background-color: rgb(221, 217, 217);
+  padding: 15px;
+  border-radius: 20px;
 }

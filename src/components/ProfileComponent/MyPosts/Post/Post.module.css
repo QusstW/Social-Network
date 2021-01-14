@@ -1,3 +1,23 @@
   .item{
-    color: greenyellow
+    padding: 20px;
+    background: white;
+    margin-top: 20px;
+    border-radius: 30px;
+  }
+  .name{
+    margin-left: 10px;
+  }
+  .message{
+    margin-top: 20px;
+  }
+  .ava{
+    
+  }
+  .item img{
+    width: 70px;
+    border-radius: 60px;
+  }
+  .AvaWsName{
+    display: flex;
+    margin-top: 20px;
   }

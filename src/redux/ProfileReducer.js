@@ -10,9 +10,9 @@ let initializationStore = {
   NewPostText: "Введите сообщение..."
 }
 
-const ProfileReducer = (state = initializationStore, actions) =>{
+const ProfileReducer = (state = initializationStore, actions) => {
     switch (actions.type) {
-        case ADD_POST:
+        case ADD_POST:{
             let postData = {
                 name: "Try",
                 message: state.NewPostText
@@ -23,6 +23,7 @@ const ProfileReducer = (state = initializationStore, actions) =>{
               PostsData : [...state.PostsData, postData],
               NewPostText : ""
             }
+          }
             
 
         case UPDATE_NEW_POST_MESSAGE:

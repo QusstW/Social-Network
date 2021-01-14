@@ -1,7 +1,13 @@
 .header{
     grid-area: h;
-    background-color: aquamarine;
+    background: linear-gradient(#424040, #1a1717);
   }
   .header img{
     width: 20px;
+  }
+  .qsn{
+    color: white;
+    font-size: 28px;
+    margin: 10px;
+    font-weight: bold;
   }

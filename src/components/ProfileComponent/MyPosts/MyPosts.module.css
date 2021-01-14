@@ -1,0 +1,13 @@
+.Myposts{
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(221, 217, 217);
+    border-radius: 20px;
+}
+.InputVbutton{
+    margin-top: 20px;
+}
+.Inputs{
+    min-width: -webkit-fill-available;
+    resize: none;
+}

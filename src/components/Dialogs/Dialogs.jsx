@@ -38,7 +38,6 @@ const Dialogs = (props) => {
                 {message}
                 <textarea onChange={onMessageChenge} ref={newMessageElement} value={props.newMessageText} > </textarea>
                 <button onClick={onAddMessage}>Push</button>
-
             </div>
 
 
