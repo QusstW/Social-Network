@@ -6,6 +6,7 @@ let initializationStore = {
     TotalCountUsers: 0,
     PageSize: 5,
     CurrentPage: 1,
+    isLoading: false,
   }
 
 window.asd = initializationStore
@@ -43,6 +44,9 @@ const UsersReduser = (state = initializationStore, actions) =>{
 
       case "SET-NUMBER-OF-PAGE":
           return { ...state, CurrentPage:actions.numberOfPage}
+      
+      case "SET-IS-LOADING":
+          return { ...state, isLoading:actions.isLoading}
 
       default: 
           return state
@@ -57,21 +61,23 @@ const UsersReduser = (state = initializationStore, actions) =>{
 }
 
 
-export const followAC = (userID) => {
+export const follow = (userID) => {
  return {type:"FOLLOW", userID: userID}
 }
-
-export const unfollowAC = (userID) => {
+export const unfollow = (userID) => {
   return {type:"UNFOLLOW", userID: userID}
 }
-export const setUsersAC =(Users) => {
+export const setUsers =(Users) => {
   return {type:"SET-USERS", Users:Users}
 }
-export const setTotalCountUsersAC =(count) =>{
+export const setTotalCountUsers =(count) =>{
   return {type:"SET-COUNT-USERS", count }
 }
-export const setCurrentPageAC = (numberOfPage)=>{
+export const setCurrentPage = (numberOfPage)=>{
   return {type:"SET-NUMBER-OF-PAGE", numberOfPage}
+}
+export const setIsLoading = (isLoading) =>{
+  return {type:"SET-IS-LOADING", isLoading}
 }
 
 export default UsersReduser
