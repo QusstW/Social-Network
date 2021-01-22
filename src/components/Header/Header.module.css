@@ -1,13 +1,19 @@
 .header{
     grid-area: h;
     background: linear-gradient(#424040, #1a1717);
-  }
-  .header img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header img{
     width: 20px;
-  }
-  .qsn{
+}
+.logo{
     color: white;
     font-size: 28px;
     margin: 10px;
     font-weight: bold;
-  }
+}
+.header a {
+  color: white;
+}

@@ -1,3 +1,4 @@
+import AuthReducer from "./AuthReducer";
 import DialogReducer from "./DialogReducer";
 import MusicReduser from "./MusicReducer";
 import ProfileReducer from "./ProfileReducer";
@@ -12,8 +13,8 @@ let reducers = combineReducers({
     profilePage: ProfileReducer,
     dialogsPage: DialogReducer,
     musicPage: MusicReduser,
-    findUsersPage: UsersReduser
-
+    findUsersPage: UsersReduser,
+    auth: AuthReducer
 })
 
 let store = createStore(reducers)

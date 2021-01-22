@@ -15,7 +15,7 @@ class ProfileContainer extends React.Component {
             userId = 11;
         }
         axios.get('https://social-network.samuraijs.com/api/1.0/profile/' + userId).then(Response =>{
-            console.log(Response)
+            // console.log(Response)
             this.props.setUserProfile(Response.data)
            
         })
@@ -40,7 +40,8 @@ let mapStateToProps = (state) => {
 
 let WithRouterProfile = withRouter(ProfileContainer)
 
-export default connect(mapStateToProps, {
+export default connect(mapStateToProps, 
+    {
     setUserProfile,
-
-})(WithRouterProfile)
+    }
+)(WithRouterProfile)
