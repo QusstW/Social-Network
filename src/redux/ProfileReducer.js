@@ -7,7 +7,8 @@ let initializationStore = {
     {id : 2, name: "Anton", message: "Оу shit" },            //post
     {id : 3, name: "Ilya", message: "Здесь был Илья" }       //post
   ],
-  NewPostText: "Введите сообщение..."
+  NewPostText: "Введите сообщение...",
+  UserProfile: null,
 }
 
 const ProfileReducer = (state = initializationStore, actions) => {
@@ -31,6 +32,8 @@ const ProfileReducer = (state = initializationStore, actions) => {
               ...state,
               NewPostText : actions.text
             }
+        case "SET-USER-PROFILE":
+          return{ ...state, UserProfile: actions.profile }
     
         default:
             return state
@@ -46,6 +49,8 @@ export const addPostActionCreator = () => {
   export const updateNewPostMessageActionCreator = (text) => {
     return { type: "UPDATE-NEW-POST-MESSAGE", text: text }
   }
-
+export const setUserProfile = (profile) =>{
+    return { type: "SET-USER-PROFILE", profile }
+}
 
 export default ProfileReducer

@@ -93,7 +93,6 @@ export default connect(mapStateToProps,
         setTotalCountUsers,
         setCurrentPage,
         setIsLoading, 
-
     }
     )(UsersContainer)
 
